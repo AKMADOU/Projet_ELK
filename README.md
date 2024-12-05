@@ -51,34 +51,6 @@ Configuration
 Logstash
 Le fichier de configuration de Logstash est situé dans le dossier ./logstash_dir/logstash.conf.
 
-Voici un exemple de ce fichier de configuration :
-
-plaintext
-Copier le code
-input {
-  file {
-    path => "/usr/share/logstash/data/inlog.log"
-    start_position => "beginning"
-  }
-}
-
-filter {
-  grok {
-    match => { "message" => "%{IP:client_ip} - - \[%{HTTPDATE:timestamp}\] \"%{WORD:verb} %{DATA:request} HTTP/%{NUMBER:http_version}\" %{NUMBER:status} %{NUMBER:bytes}" }
-  }
-  date {
-    match => ["timestamp", "dd/MMM/yyyy:HH:mm:ss Z"]
-    target => "@timestamp"
-  }
-}
-
-output {
-  elasticsearch {
-    hosts => ["http://elasticsearch:9200"]
-    index => "nginx-logs-%{+YYYY.MM.dd}"
-  }
-  stdout { codec => rubydebug }
-}
 Assurez-vous de mettre à jour le chemin du fichier inlog.log pour qu'il pointe vers votre fichier de log réel.
 
 Kibana
