@@ -1,5 +1,3 @@
-# Nom du Projet
-
 ## Description
 [Décrivez brièvement le projet ici. Expliquez son objectif, ses fonctionnalités principales, et ce qu'il résout. Par exemple, si votre projet est un pipeline de données pour Logstash, vous pouvez expliquer son rôle dans l'ingestion et le traitement des logs.]
 
