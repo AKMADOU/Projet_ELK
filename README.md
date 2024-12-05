@@ -26,26 +26,24 @@ Si vous n'avez pas ces outils installés, vous pouvez suivre les guides de leurs
 
 Clonez ce dépôt sur votre machine locale :
 
-```bash
-git clone https://github.com/votre-nom-utilisateur/votre-repository.git
-cd votre-repository
-2. Lancer les conteneurs Docker
+
+- git clone https://github.com/votre-nom-utilisateur/votre-repository.git
+- cd votre-repository
+### 2. Lancer les conteneurs Docker
 Une fois dans le répertoire du projet, lancez les conteneurs Docker avec Docker Compose :
 
-bash
-Copier le code
-docker-compose up -d
+
+- docker-compose up -d
 Cela démarrera les services suivants dans des conteneurs Docker :
 
-Elasticsearch : Serveur de recherche et d'analyse.
-Kibana : Interface graphique pour explorer et visualiser les données dans Elasticsearch.
-Logstash : Outil de traitement des logs, configuré pour ingérer et envoyer les logs dans Elasticsearch.
-3. Vérifier le statut des services
+- Elasticsearch : Serveur de recherche et d'analyse.
+- Kibana : Interface graphique pour explorer et visualiser les données dans Elasticsearch.
+- Logstash : Outil de traitement des logs, configuré pour ingérer et envoyer les logs dans Elasticsearch.
+### 3. Vérifier le statut des services
 Pour vérifier que les services sont bien lancés, vous pouvez utiliser la commande suivante pour voir les logs des conteneurs :
 
-bash
-Copier le code
-docker-compose logs -f
+
+- docker-compose logs -f
 Une fois que tout est en place, accédez à Kibana via http://localhost:5601 et à Elasticsearch via http://localhost:9200.
 
 Configuration
@@ -95,21 +93,11 @@ Créez un index pattern nginx-logs-* pour voir les logs de votre application.
 Commandes Docker
 Voici quelques commandes utiles pour gérer votre environnement Docker :
 
-Démarrer les services : docker-compose up -d
-Arrêter les services : docker-compose down
-Vérifier les logs : docker-compose logs -f
-Accéder aux conteneurs : docker exec -it <container_name> bash
-Tests
-
-Pour tester votre configuration, vous pouvez envoyer des logs via un fichier log local ou directement depuis un serveur. Une fois les logs traités par Logstash, vous pouvez vérifier l'index Elasticsearch dans Kibana.
-
-Contributions
-
-Les contributions sont les bienvenues ! Pour contribuer à ce projet, veuillez suivre les étapes suivantes :
-
-Fork ce dépôt.
-Créez une nouvelle branche (git checkout -b feature-xyz).
-Faites vos modifications.
-Commettez vos modifications (git commit -am 'Ajout de la fonctionnalité xyz').
-Poussez votre branche (git push origin feature-xyz).
-Ouvrez une pull request.
+Démarrer les services : 
+- docker-compose up -d
+Arrêter les services : 
+- docker-compose down
+Vérifier les logs : 
+- docker-compose logs -f
+Accéder aux conteneurs : 
+- docker exec -it <container_name> bash
