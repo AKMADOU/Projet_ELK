@@ -29,42 +29,60 @@ Une fois dans le répertoire du projet, lancez les conteneurs Docker avec Docker
 
 
 - docker-compose up -d
+
 Cela démarrera les services suivants dans des conteneurs Docker :
 
 - Elasticsearch : Serveur de recherche et d'analyse.
 - Kibana : Interface graphique pour explorer et visualiser les données dans Elasticsearch.
 - Logstash : Outil de traitement des logs, configuré pour ingérer et envoyer les logs dans Elasticsearch.
+
 ### 3. Vérifier le statut des services
+
 Pour vérifier que les services sont bien lancés, vous pouvez utiliser la commande suivante pour voir les logs des conteneurs :
 
 
 - docker-compose logs -f
+
 Une fois que tout est en place, accédez à Kibana via http://localhost:5601 et à Elasticsearch via http://localhost:9200.
 
 Configuration
 
-Logstash
+- Logstash
+
 Le fichier de configuration de Logstash est situé dans le dossier ./logstash_dir/logstash.conf.
 
 Assurez-vous de mettre à jour le chemin du fichier inlog.log pour qu'il pointe vers votre fichier de log réel.
 
-Kibana
+- Kibana
+
 Une fois les logs envoyés à Elasticsearch, vous pouvez configurer un tableau de bord dans Kibana pour visualiser vos données. Utilisez le tableau de bord par défaut ou créez un nouveau tableau de bord en fonction de vos besoins.
 
 Utilisation
 
 Visualisation des logs
+
 Accédez à Kibana à l'adresse http://localhost:5601.
+
 Allez dans l'onglet Discover pour explorer vos logs.
+
 Créez un index pattern nginx-logs-* pour voir les logs de votre application.
-Commandes Docker
+
+- Commandes Docker
+
 Voici quelques commandes utiles pour gérer votre environnement Docker :
 
 Démarrer les services : 
+
 - docker-compose up -d
+
 Arrêter les services : 
+
 - docker-compose down
+
 Vérifier les logs : 
+
 - docker-compose logs -f
+
 Accéder aux conteneurs : 
+
 - docker exec -it <container_name> bash
